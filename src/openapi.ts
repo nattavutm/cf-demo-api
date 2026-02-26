@@ -6,7 +6,7 @@ export function buildOpenAPISpec(baseUrl: string) {
   return {
     openapi: '3.0.3',
     info: {
-      title: 'CF Demo API — Star Wars Edition',
+      title: 'CF Demo API - Star Wars Edition',
       version: '1.0.0',
       description: 'Demo REST API for Cloudflare API Security (Schema Validation & Sequence Mitigation)',
     },
@@ -98,7 +98,7 @@ export function buildOpenAPISpec(baseUrl: string) {
       },
       '/api/auth/login': {
         post: {
-          summary: 'Login — SEQUENCE STEP 1',
+          summary: 'Login - SEQUENCE STEP 1',
           tags: ['Auth'],
           requestBody: {
             required: true,
@@ -113,7 +113,7 @@ export function buildOpenAPISpec(baseUrl: string) {
       },
       '/api/auth/me': {
         get: {
-          summary: 'Get current user — SEQUENCE STEP 2',
+          summary: 'Get current user - SEQUENCE STEP 2',
           tags: ['Auth'],
           security: [{ BearerAuth: [] }],
           responses: {
@@ -142,7 +142,7 @@ export function buildOpenAPISpec(baseUrl: string) {
           responses: { '200': { description: 'Paginated list of people' } },
         },
         post: {
-          summary: 'Create person — Schema Validation demo',
+          summary: 'Create person - Schema Validation demo',
           tags: ['People'],
           requestBody: {
             required: true,
@@ -157,7 +157,7 @@ export function buildOpenAPISpec(baseUrl: string) {
       '/api/people/{id}': {
         get: { summary: 'Get person by ID', tags: ['People'], parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'integer' } }], responses: { '200': { description: 'Person details' }, '404': { description: 'Not found' } } },
         put: {
-          summary: 'Update person — Schema Validation demo',
+          summary: 'Update person - Schema Validation demo',
           tags: ['People'],
           parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'integer' } }],
           requestBody: { required: true, content: { 'application/json': { schema: { type: 'object' } } } },
@@ -178,14 +178,14 @@ export function buildOpenAPISpec(baseUrl: string) {
         get: { summary: 'Get planet by ID', tags: ['Planets'], parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'integer' } }], responses: { '200': { description: 'Planet details' }, '404': { description: 'Not found' } } },
       },
       '/api/starships': {
-        get: { summary: 'List starships — SEQUENCE STEP 3', tags: ['Starships'], parameters: [{ name: 'page', in: 'query', schema: { type: 'integer' } }, { name: 'page_size', in: 'query', schema: { type: 'integer' } }], responses: { '200': { description: 'Starships list' } } },
+        get: { summary: 'List starships - SEQUENCE STEP 3', tags: ['Starships'], parameters: [{ name: 'page', in: 'query', schema: { type: 'integer' } }, { name: 'page_size', in: 'query', schema: { type: 'integer' } }], responses: { '200': { description: 'Starships list' } } },
       },
       '/api/starships/{id}': {
         get: { summary: 'Get starship by ID', tags: ['Starships'], parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'integer' } }], responses: { '200': { description: 'Starship details' }, '404': { description: 'Not found' } } },
       },
       '/api/cart': {
         get: {
-          summary: 'View cart — SEQUENCE STEP 5',
+          summary: 'View cart - SEQUENCE STEP 5',
           tags: ['Cart'],
           security: [{ BearerAuth: [] }],
           responses: { '200': { description: 'Cart contents' }, '401': { description: 'Unauthorized' } },
@@ -199,7 +199,7 @@ export function buildOpenAPISpec(baseUrl: string) {
       },
       '/api/cart/items': {
         post: {
-          summary: 'Add item to cart — SEQUENCE STEP 4',
+          summary: 'Add item to cart - SEQUENCE STEP 4',
           tags: ['Cart'],
           security: [{ BearerAuth: [] }],
           requestBody: {
@@ -224,7 +224,7 @@ export function buildOpenAPISpec(baseUrl: string) {
       },
       '/api/orders': {
         post: {
-          summary: 'Checkout / place order — SEQUENCE STEP 6',
+          summary: 'Checkout / place order - SEQUENCE STEP 6',
           tags: ['Orders'],
           security: [{ BearerAuth: [] }],
           requestBody: {
@@ -238,7 +238,7 @@ export function buildOpenAPISpec(baseUrl: string) {
           },
         },
         get: {
-          summary: 'List orders — SEQUENCE STEP 7',
+          summary: 'List orders - SEQUENCE STEP 7',
           tags: ['Orders'],
           security: [{ BearerAuth: [] }],
           responses: { '200': { description: 'Orders list' }, '401': { description: 'Unauthorized' } },
