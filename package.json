@@ -1,0 +1,18 @@
+{
+  "name": "cf-demo-api",
+  "version": "1.0.0",
+  "description": "Star Wars themed REST API on Cloudflare Workers for API Security demo (Schema Validation & Sequence Mitigation)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.80.0"
+  }
+}
